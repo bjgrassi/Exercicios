@@ -1,0 +1,11 @@
+README.md
+bruna05
+bruna1.txt
+bruna2.txt
+bruna3.txt
+instrucoes.txt
+log
+pasta1
+pasta2
+pasta3
+trab1-2017.txt
