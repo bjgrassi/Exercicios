@@ -1,7 +1,7 @@
 Aluno: BRUNA GRASSI
 Trabalho 2 de Laboratorio de Sistemas Operacionais
 Professor: Alex Salgado
-1o. Semestre de 2017   Turno: 0050012984
+1o. Semestre de 2017   Turno: Manhã
 --------------------------------------------------
 1-Faça um script shell que exiba o seguinte menu e execute as operações abaixo:
 

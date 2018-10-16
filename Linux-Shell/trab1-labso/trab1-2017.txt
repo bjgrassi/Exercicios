@@ -1,4 +1,4 @@
-Aluno: Bruna Grassi 0050012984
+Aluno: Grassi 0050012984
 Trabalho de Laboratorio de Sistemas Operacionais
 Professor: Alex Salgado
 1o. Semestre de 2017   Turno: Manha

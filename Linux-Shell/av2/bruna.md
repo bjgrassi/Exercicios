@@ -1,10 +1,9 @@
-Unilasalle-RJ - AV2
-Aluno: BRUNA JACINTO GRASSI 0050012984
+Aluno: GRASSI 0050012984
 Prova Av2 de Laboratorio de Sistemas Operacionais
 Professor: Alex Salgado
 1o. Semestre de 2017   Turno: MANHA
 --------------------------------------------------
-#### 1-Faça um script shell que:
+1-Faça um script shell que:
 - Pergunte por um nome e crie uma pasta e um arquivo.txt com o mesmo nome inserido.
 
 2-Quantos erros tem no script abaixo? Qual(is) são eles?
