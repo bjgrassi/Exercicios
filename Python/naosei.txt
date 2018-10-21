@@ -14,7 +14,7 @@ import csv
 'declara_bens'46, 'descricao_cargo'47, 'descricao_detalhe_situacao_candidatura'48, 
 'descricao_situacao_candidatura'49, 'despesa_maxima_campanha'50, 'idade_data_eleicao'51, 
 'idade_data_posse'52, 'nome_urna'53, 'numero_processo_candidatura'54, 'numero_protocolo_candidatura'55, 
-'numero_sequencial'56, 'numero_urna'57, 'pergunta'58]
+'numero_sequencial'56, 'numero_urna'57, 'pergunta'58] 
 
 with open('candidatura-2018.csv', newline='') as csvfile:
   reader = csv.reader(csvfile, delimiter=',')
