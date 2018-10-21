@@ -1,8 +1,11 @@
-## Prog I
-stdio.h, stdlib.h, string.h, math.h, ctype.h - cin>>cout<<, printf()/scanf(), for()/else, (do) while(), if(), vetor, matriz. Bonus: Swich() case e default, Break
+## C
+Faculdade: Exercícios e provas realizadas no período 2015.1 até 2016.2
 
-## Prog II
-funções, struct, ponteiro, arquivo
+## Prog Java
+Faculdade: Exercícios e provas realizadas no período 2016.2
 
-## Estruturas de Dados I
-Método de ordenação de vetores (Bubble Sort, Selection Sort), Busca Binária (dividir p/ conquistar), Recursividade, Listas Encadeadas (*), Alocação Dinâmica
+## Linux/Shell
+Faculdade: Exercícios e provas realizadas no período 2017.1
+
+## Python
+Faculdade: Exercícios e provas realizadas no período 2018.1
