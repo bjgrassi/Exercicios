@@ -1,7 +1,7 @@
 ## C
 Faculdade: Exercícios e provas realizadas no período 2015.1 até 2016.2
 
-## Prog Java
+## Java
 Faculdade: Exercícios e provas realizadas no período 2016.2
 
 ## Linux/Shell
