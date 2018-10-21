@@ -1,3 +1,5 @@
+#### *Utilizamos o programa DEV-C++*
+
 **--------- Bibliotecas ---------** 
 - stdio.h -> EX: Printf()/scanf()
 - stdlib.h -> Punções envolvendo alocação de memória, controle de processos, conversões e outras
