@@ -11,6 +11,7 @@ int main ()
     int i=0, j=0, subcont=0, somacont=0;
  
     printf("Digite uma frase: \n");
+    fflush(stdin);
     scanf("%[^\n]s",&frase);
  
  	

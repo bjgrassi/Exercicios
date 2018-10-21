@@ -9,6 +9,7 @@ int main ()
 	int i;
 	
 	printf("Digite: ");
+	fflush(stdin);
 	gets(frase);
 	
 /*	for(i=0;i<=strlen(frase);i++)

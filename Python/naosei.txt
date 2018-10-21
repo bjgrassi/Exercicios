@@ -1,0 +1,95 @@
+
+import csv
+#['ano_eleicao' 0, 'codigo_eleicao'1, 'codigo_tipo_eleicao'2, 'data_eleicao'3, 'descricao_eleicao'4, 
+'nome_tipo_eleicao5', 'tipo_abrangencia_eleicao'6, 'codigo_totalizacao_turno'7, 
+'descricao_totalizacao_turno'8, 'numero_turno'9, 'descricao_ue'10, 'sigla_ue'11, 'sigla_uf'12, 
+'codigo_cor_raca'13, 'codigo_estado_civil'14, 'codigo_genero'15, 'codigo_grau_instrucao'16, 
+'codigo_municipio_nascimento'17, 'codigo_nacionalidade'18, 'codigo_ocupacao'19, 'cpf'20, 
+'data_nascimento'21, 'descricao_cor_raca'22, 'descricao_estado_civil'23, 'descricao_genero'24, 
+'descricao_grau_instrucao'25, 'descricao_nacionalidade'26, 'descricao_ocupacao'27, 'email'28, 
+'nome'29, 'nome_municipio_nascimento'30, 'nome_social'31, 'sigla_uf_nascimento'32, 'titulo_eleitoral'33, 
+'codigo_legenda'34, 'composicao_legenda'35, 'nome_legenda'36, 'nome_partido'37, 'numero_partido'38,
+'sigla_legenda'39, 'sigla_partido'40, 'tipo_agremiacao'41, 'codigo_cargo'42, 
+'codigo_detalhe_situacao_candidatura'43, 'codigo_situacao_candidatura'44, 'concorre_reeleicao'45, 
+'declara_bens'46, 'descricao_cargo'47, 'descricao_detalhe_situacao_candidatura'48, 
+'descricao_situacao_candidatura'49, 'despesa_maxima_campanha'50, 'idade_data_eleicao'51, 
+'idade_data_posse'52, 'nome_urna'53, 'numero_processo_candidatura'54, 'numero_protocolo_candidatura'55, 
+'numero_sequencial'56, 'numero_urna'57, 'pergunta'58]
+
+with open('candidatura-2018.csv', newline='') as csvfile:
+  reader = csv.reader(csvfile, delimiter=',')
+  contadorindigena = 0
+  contadorbranca = 0
+  contadorparda = 0
+  contadorpreta = 0
+  contadoramarela = 0
+  contadorTotal = 0
+  mulheres = 0
+  for row in reader:
+    contadorTotal = contadorTotal + 1
+    if row[15] == '4':
+      mulheres += 1
+      if row[22] == 'INDIGENA':
+        contadorindigena = contadorindigena + 1
+      elif row[22] == 'BRANCA':
+        contadorbranca = contadorbranca + 1  
+      elif row[22] == 'PARDA':
+        contadorparda = contadorparda + 1    
+      elif row[22] == 'PRETA':
+        contadorpreta = contadorpreta + 1
+      elif row[22] == 'AMARELA':
+        contadoramarela = contadoramarela + 1  
+    
+  contadorTotal = contadorTotal - 1
+  print('PARDA : ' , round(contadorparda/contadorTotal * 100, 2), '%')
+  print('INDIGENA : ' , round(contadorindigena/contadorTotal * 100, 2), '%')
+  print('BRANCA : ' , round(contadorbranca/contadorTotal * 100, 2), '%')
+  print('PRETA : ' , round(contadorpreta/contadorTotal * 100, 2), '%')
+  print('AMARELA : ' , round(contadoramarela/contadorTotal * 100, 2), '%')
+  print('TOTAL CANDIDATOS : ' , round(contadorTotal/contadorTotal * 100, 2), '%')
+  print('TOTAL MULHERES: ', mulheres)
+  print('PROPORÇÃO MULHERES: ', round(mulheres/contadorTotal * 100, 2), '%')
+
+
+
+Python 3.6.1 (default, Dec 2015, 13:05:11)
+[GCC 4.8.2] on linux
+   
+PARDA :  30.63 %
+INDIGENA :  0.19 %
+BRANCA :  55.16 %
+PRETA :  13.84 %
+AMARELA :  0.17 %
+TOTAL CANDIDATOS :  100.0 %
+TOTAL MULHERES:  1455
+PROPOÇÃO MULHERES:  31.23 %
+
+mulheres:
+
+PARDA :  28.54 %
+INDIGENA :  0.21 %
+BRANCA :  52.89 %
+PRETA :  18.23 %
+AMARELA :  0.21 %
+TOTAL CANDIDATOS :  100.0 %
+TOTAL MULHERES:  1454
+PROPORÇÃO MULHERES:  100.0 %
+
+_________________________________________________________________
+
+dict_partido = {}
+
+with open('candidatura-2018.csv', newline='') as csvfile:
+  reader = csv.reader(csvfile, delimiter=',')
+  COUNT_M = 0
+  COUNT_F = 0
+  for row in reader: 
+    partido=row[52]
+    if partido in dict_partido.keys(): 
+      dict_partido[partido] += 1
+    else: 
+      dict_partido[partido] = 1
+#print(dict_partido)
+for r in sorted(dict_partido, key=dict_partido.get, reverse=True):
+  print(r, dict_partido[r])
+
