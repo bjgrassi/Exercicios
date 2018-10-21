@@ -25,7 +25,7 @@ int main()
 {
 	int opcao;
 	
-	printf("Escolha uma opcao:\n1 - cadastrar\n2 - reajustar\n3 - exibir\n4 - sair\n");
+	printf("Escolha uma opcao:\n1 - cadastrar\n2 - reajustar\n3 - exibir\n4 - sair\n\t:");
 	scanf("%d",&opcao);
 	
 	while(opcao!=4){
@@ -51,7 +51,7 @@ int main()
 void cadastrar(void)
 {
 	system("cls");
-	if((p=fopen("G:\\Prog2\\arq.txt","w"))==NULL)
+	if((p=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\Arq-Oficial.txt","w"))==NULL)
 	{
 		perror("Erro de abertura.");
 		system("pause");
@@ -66,59 +66,62 @@ void cadastrar(void)
 		gets(prod[i].desc); strupr(prod[i].desc);
 		printf("Preco: ");
 		scanf("%f",&prod[i].preco);
-		fprintf(p,"Codigo: %d\nDescricao: %s\nPreco: %.1f\n\n", prod[i].cod, prod[i].desc, prod[i].preco);
+		printf("\n");
+		fprintf(p,"Codigo: %d\nDescricao: %s\nPreco: %.1f\n\n", prod[i].cod, prod[i].desc, prod[i].preco); //no arquivo
 	}fclose(p);
-	puts("Arquivo cadastrado com sucesso! ");
+	puts("\nArquivo cadastrado com sucesso! \n\n");
 }
 
 void reajustar(void)
 {
 	system("cls");
-	if((p=fopen("G:\\Prog2\\arq.txt","r"))==NULL)
+	if((p=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\Arq-Oficial.txt","r"))==NULL)
 	{
 		perror("Erro de leitura.\n");
 		system("pause");
 		exit(0);
 	}
-	if((p1=fopen("G:\\Prog2\\arq2.txt","w"))==NULL)
+	if((p1=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\Arq-Reajuste.txt","w"))==NULL)
 	{
 		perror("Erro de leitura.\n");
 		system("pause");
 		exit(0);
 	}
 		float perc;
-		printf("Porcentagem:");
+		printf("Porcentagem: ");
 		scanf("%f",&perc);
+		
 		if(perc==0)
 		  perc=1;
+		  
 	int i=0;
-	fscanf(p,"%d",&prod.cod);	      		
+	fscanf(p,"%d",&prod[i].cod);	      		
 	while(!feof(p))
 	{
-		printf("%d",prod[i].cod);
+		printf("Codigo: %d ",prod[i].cod);
 		prod[i].preco += (prod[i].preco * (perc/100.0));
-		fprintf(p1,"%d",prod[i].cod);
-		fscanf(p,"%f",&prod.preco);
-		printf("%.1f",prod[i].preco);
+		fprintf(p1,"Codigo: %d ",prod[i].cod);
+		fscanf(p,"%f",&prod[i].preco);
+		printf("Preco: %.1f ",prod[i].preco);
 		prod[i].preco += (prod[i].preco * (perc/100.0));
-		fprintf(p1,"%.1f",prod[i].preco);
-		fscanf(p,"%d",&prod.cod);
+		fprintf(p1,"Preco Reajuste: %.1f \n",prod[i].preco);
+		fscanf(p,"%d",&prod[i].cod);
 	}
 	fclose(p);
 	fclose(p1);
-	puts("Arquivo gerado com sucesso.");
+	puts("\nArquivo gerado com sucesso.\n\n");
 }
 
 void exibir(void)
 {
 	system("cls");
-	if((p=fopen("G:\\Prog2\\arq.txt","r"))==NULL)
+	if((p=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\Arq-Oficial.txt","r"))==NULL)
 	{
 		perror("Erro de Leitura.\n");
 		system("pause"); 
 		exit(0);
 	}
-	if((p1=fopen("G\\Prog2\\arq2.txt","r"))==NULL)
+	if((p1=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\Arq-Reajuste.txt","r"))==NULL)
 	{
 		perror("Erro de Leitura.\n");
 		system("pause");
@@ -130,12 +133,15 @@ void exibir(void)
 		fscanf(p,"%d", &prod[i].cod);
 		fscanf(p,"%s", &prod[i].desc);
 		fscanf(p,"%f", &prod[i].preco);
-	    printf("Codigo: %d\nDescricao: %s\nPreco: %.1f\n\n",prod[i].cod, prod[i].desc, prod[i].preco);
+	    printf("Codigo: %d\nDescricao: %s\nPreco: %.1f\n\n", prod[i].cod, prod[i].desc, prod[i].preco);
 	}
-	printf("\nPreco com reajuste:\n");
+	
+	/*printf("\nPreco com reajuste:\n");
 	for(int i=0;i<tam;i++)
 	{
-		fscanf(p1,"%f", &prod[i].preco);
+		fscanf(p,"%d", &prod[i].cod);
+		fscanf(p,"%s", &prod[i].desc);
+		fscanf(p,"%f", &prod[i].preco);
 	    printf("Codigo: %d\nDescricao: %s\nPreco: %.1f\n\n",prod[i].cod, prod[i].desc, prod[i].preco);
-	}fclose(p); fclose(p1);
+	}fclose(p1); */fclose(p);
 }
