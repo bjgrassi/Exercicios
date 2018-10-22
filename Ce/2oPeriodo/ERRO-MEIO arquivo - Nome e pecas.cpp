@@ -33,7 +33,7 @@ int main ()
      return 0;  
 }
    void grava(void)
-   {   if ((arq=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\arq.bin","wb"))==NULL) 
+   {   if ((arq=fopen("E:\\arq.bin","wb"))==NULL) 
     {    perror("\n\nNao foi possivel abrir o arquivo.\n");
          system("pause");
          exit(0);
@@ -55,14 +55,14 @@ int main ()
    }
 
    void gera(void)
-   { if ((arq=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\arq.bin","rb"))==NULL) 
+   { if ((arq=fopen("E:\\arq.bin","rb"))==NULL) 
     {
         perror("\n\nNao foi possivel abrir o arquivo.\n");
         system("pause");
         exit(0);
     }
 
-    if ((arq2=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\arq2.bin","wb"))==NULL)
+    if ((arq2=fopen("E:\\arq2.bin","wb"))==NULL)
     {
         printf("\n\nNao foi possivel abrir o arquivo.\n");
         system("pause");
@@ -86,7 +86,7 @@ int main ()
    void atualiza(void)
    {    int teste=0; 
         char nome[41];   
-        if ((arq=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\arq2.bin","ab+"))==NULL)
+        if ((arq=fopen("E:\\arq2.bin","ab+"))==NULL)
         {
             perror("\n\nNao foi possivel abrir o arquivo.\n");
             system("pause");

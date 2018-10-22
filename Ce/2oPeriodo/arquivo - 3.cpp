@@ -35,7 +35,7 @@ void menu(void)
 
 void gera(void)
 {   printf("Arquivo criado! TODOS OS dados anteriores foram perdidos\n");
-    if((p=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\arq.xls","w"))==NULL)
+    if((p=fopen("E:\\arq.xls","w"))==NULL)
     {   perror("Erro de abertura\n");
         system("pause");
         exit(0);
@@ -55,7 +55,7 @@ void gera(void)
 }
 void atualiza(void)
 {   printf("Arquivo sera atualizado no final\n");
-    if((p=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\arq.xls","a"))==NULL)
+    if((p=fopen("E:\\arq.xls","a"))==NULL)
     {   perror("Erro de abertura\n");
         system("pause");
         exit(0);
@@ -74,7 +74,7 @@ void atualiza(void)
       
 }        
 void exibe(void)
-{  if((p=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\arq.xls","r"))==NULL)
+{  if((p=fopen("E:\\arq.xls","r"))==NULL)
     {   perror("Erro de abertura\n"); system("pause"); exit(0); }
     printf("\nCodigo\tPreco\n");
     fscanf(p,"%d%f",&prod.cod,&prod.pr);
@@ -85,7 +85,7 @@ void exibe(void)
 }
 void total (void)
 {   float tot=0.0;
-    if((p=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\arq.xls","r"))==NULL)
+    if((p=fopen("E:\\arq.xls","r"))==NULL)
     {   perror("Erro de abertura\n"); system("pause"); exit(0);}
     fscanf(p,"%d%f",&prod.cod,&prod.pr);
     while(!feof(p))

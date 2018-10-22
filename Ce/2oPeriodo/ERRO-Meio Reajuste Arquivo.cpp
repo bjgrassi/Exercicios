@@ -18,6 +18,7 @@ d) Exibir a estrutura antes e depois do reajuste. */
 struct prod
     { int cod;  char desc[30];    float pr;
     } reg[tam];
+
 void le(void), reaj(float),exibe(void),menu(void);
 FILE *arq, *arq1;//declaracao de arquivo
 int main()
@@ -27,7 +28,7 @@ int main()
 void menu(void)
 {   char opcao; float perc;
     do
-    { printf("\n L: Ler\n E: Exibir\n R: Reajustar\nS:Sair\n  -> ");
+    { printf("\n L: Ler\n E: Exibir\n R: Reajustar\n S:Sair\n  -> ");
       fflush(stdin); scanf("%c",&opcao); opcao=toupper(opcao);
       if (opcao == 'L')   le();
       else if (opcao=='E') exibe();
@@ -62,17 +63,23 @@ void exibe(void)
        printf("%d: %s - R$%.2f\n", reg[i].cod,reg[i].desc,reg[i].pr); 
 }
 void reaj(float val) //LER de produto.xls e GRAVAR em reajustado.xls
-{   if((arq = fopen("E:\\reajustado.xls","w"))==NULL)
-    {  fprintf(arq,"%.2f\n",reg.pr);
-       perror("Impossivel abrir"); system("pause"); exit(0); }
-    if((arq1 = fopen("E:\\produtos.xls","r"))==NULL)
+{   int i=0;
+
+    if((arq = fopen("E:\\produtos.xls","r"))==NULL)
     {   perror("Impossivel abrir"); system("pause"); exit(0); }
-    fscanf(arq1,"%d%s%f", &reg.cod,&reg.desc,&reg.pr);
-    while(arq1 != EOF)
-    {   fprintf(arq,"%d\t%s\t", reg.cod,reg.desc);
-        reg.pr += reg.pr*val/100.0;
-          fscanf(arq1,"%d%s%f", &reg.cod,&reg.desc,&reg.pr);
+	
+	if((arq1 = fopen("E:\\reajustado.xls","w"))==NULL)
+    {  //fprintf(arq,"%.2f\n",reg[i].pr);
+       perror("Impossivel abrir"); system("pause"); exit(0); }
+       
+    fscanf(arq,"%d%s%f", &reg[i].cod,&reg[i].desc,&reg[i].pr);
+    while(!feof(arq))
+    {   
+        reg[i].pr += reg[i].pr*val/100.0;
+		fprintf(arq1,"%d\t%s\t%.2f\n", reg[i].cod,reg[i].desc,reg[i].pr);
+        i++;
+        fscanf(arq,"%d%s%f", &reg[i].cod,&reg[i].desc,&reg[i].pr);
     }
-    fclose(arq); 
-    fclose(arq1);
+    fclose(arq1); 
+    fclose(arq);
 }

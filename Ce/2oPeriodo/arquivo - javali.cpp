@@ -38,7 +38,7 @@ int main()
 
 void gerar (void)
 {    system("cls");
-    if((f1 = fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\jav1.dat", "wb"))==NULL)
+    if((f1 = fopen("E:\\javali1.dat", "wb"))==NULL)
       {  perror ("Impossivel Gerar\n");
          system("pause");
          exit(0);
@@ -64,7 +64,7 @@ void gerar (void)
   
 void exibir(void)
 {    system("cls");
-    if((f1 = fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\jav1.dat","rb"))==NULL)
+    if((f1 = fopen("E:\\javali1.dat","rb"))==NULL)
       {  perror("Impossivel Abrir\n"); system("pause"); exit(0); }
    fread(&javali,sizeof(struct r),1,f1);//ler para entrar no while
    while(!feof(f1))//exibe na tela e ler novamente para sair do while
@@ -76,9 +76,9 @@ void exibir(void)
 
 void gravar(void)
 {    system("cls");
-    if((f1 = fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\jav1.dat", "rb"))==NULL)
+    if((f1 = fopen("E:\\javali1.dat", "rb"))==NULL)
       {  perror ("Impossivel Abrir\n"); system("pause"); exit(0); }
-   if((f2 = fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\expo.xls", "w"))==NULL)
+   if((f2 = fopen("E:\\javali-expo.xls", "w"))==NULL)
       {  perror ("Impossivel gerar\n"); system("pause"); exit(0); }
    fread(&javali,sizeof(struct r),1,f1); //Lê em f1
    fprintf(f2,"Codigo\tPeso\n");//Grava em f2

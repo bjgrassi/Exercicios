@@ -18,7 +18,7 @@ struct no{
 	struct no* prox;
 }
 
-ptrno ordena(ptrno *l, int tam){
+ptrno *ordena(ptrno *l, int tam){
 	if((*l)==NULL)
 		return 0;
 		else{
@@ -43,7 +43,7 @@ int main(){
 	ptrno lista=NULL;
 	FILE *p, *r;
 	
-	if((p=fopen("arq.bin","rb"))==NULL)
+	if((p=fopen("E:\\arq.bin","rb"))==NULL)
 		printf("Erro.\n");
 		else{
 			int cont=0;
@@ -64,7 +64,7 @@ int main(){
 		}
 	}
 	
-	if((r=fopen("reaj.bin","wb"))==NULL){
+	if((r=fopen("E:\\reaj.bin","wb"))==NULL){
 		printf("Erro\n");
 		else{
 			float reaj
