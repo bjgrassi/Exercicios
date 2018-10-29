@@ -35,10 +35,13 @@ int main ()
     int posicao, posicao2;
     
     printf("Insira a string: \n");
-    gets(string); 
+    gets(string);
+    strupr(string);
     
-    printf("Insira o caracter a ser buscado: \n"); fflush(stdin);
+    printf("Insira o caracter a ser buscado: \n"); 
+	fflush(stdin);
     scanf("%c", &caracter); 
+    caracter = (toupper(caracter));
     
     system("cls");
     

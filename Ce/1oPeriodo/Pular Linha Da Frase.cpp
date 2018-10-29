@@ -5,36 +5,27 @@
 
 int main ()
 {
-	char frase[151], frase2[151];
+	char frase[151];
 	int i;
 	
 	printf("Digite: ");
 	fflush(stdin);
 	gets(frase);
 	
-/*	for(i=0;i<=strlen(frase);i++)
-	{
-		if((frase[i]==' ') || (frase[i]=='.') || (frase[i]==','))
-		{
-			printf("\n");
-			i++;
-		}
-		frase2[i]=frase[i];
-	}
-
-	puts(frase2);*/
+	printf("\n");
 	
+//	for(i=0;i<=strlen(frase);i++)
 	while(frase[i]!='\0')
 	{
+		printf("%c", frase[i]);
 		if((frase[i]=='.')||(frase[i]==',') || (frase[i]==' '))
 		{ 	
 			printf("\n");
-			i++;
 		}
-		frase2[i]=frase[i];
+		i++;
 	} 
 	
-	puts(frase2);	
+	printf("\n");
 	system("pause");
 	return 0;
 }

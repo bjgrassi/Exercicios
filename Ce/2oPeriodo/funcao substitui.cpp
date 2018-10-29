@@ -15,12 +15,12 @@ int substitui(char *string, char c1, char c2)
 {
     int i,cont=0;
     
-      for(i=0;i<strlen(string);i++)
-      if(*(string+i)==c1)
-      {
-         *(string+i)=c2;
-         cont++;
-      }
+    for(i=0;i<strlen(string);i++)
+		if(*(string+i)==c1)
+		{
+		 *(string+i)=c2;
+		 cont++;
+		}
       return cont;
 }
 int main ()
@@ -43,9 +43,9 @@ int main ()
     quant = substitui(string, c1, c2);
     
     if(quant!=0)
-      printf("A quantidade de substituicoes: %d", quant);
-    else
-    printf("O caracter %c nao existe em %s\n", c1, string);
+    	printf("A quantidade de substituicoes: %d", quant);
+    	else
+    		printf("O caracter %c nao existe em %s\n", c1, string);
     
     printf("\n\nString: %s", string);
     

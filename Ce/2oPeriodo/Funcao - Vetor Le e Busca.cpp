@@ -46,3 +46,35 @@ int main ()
     system("PAUSE");
     return 0;
 }
+
+/*
+#define tam 5
+int main()
+{ int vet[tam];
+  void le(int*), busca(int*);
+  le(vet);
+  busca(vet);
+  
+  system("pause");
+  return 0;
+}
+
+void le(int *pv)
+{ printf("Valor entre 0 e 1000\n");
+  for(int i=0;i<tam;i++)
+    do{ 
+        printf("Digite o %do numero do vetor: ", i+1);
+        scanf("%d", pv+i);
+    }while((*(pv+i))<0 || (*(pv+i))>1000);
+}
+
+void busca(int *pv)
+{ int maior=-1, menor=1001;
+  for(int i=0; i<tam; i++)
+    { if((*(pv+i)) > maior)
+        maior = *(pv+i);
+      if((*(pv+i))<menor)
+        menor = *(pv+i);
+      }
+      printf("Maior = %d\n Menor:%d\n", maior,menor);
+} */ 

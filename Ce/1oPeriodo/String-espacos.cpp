@@ -26,3 +26,26 @@ int main()
  
     return 0;
 }
+
+/*
+int main ()
+{   char ent[50], sai[50];
+    int i, j=0;
+      
+      printf("Digite a frase: ");
+      gets(ent);
+      puts(ent);
+      
+      for(i=0;ent[i]!='\0';i++)
+         if(!isspace(ent[i]))
+          sai[j++]=ent[i];
+          
+          
+      puts(sai);
+      //quando sai do for o i e o j coincidem com o tamanho da string     
+      printf("%d em entrada e %d em saida ", i,j);
+      
+system("PAUSE");
+
+return 0;
+} */
