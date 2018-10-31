@@ -18,7 +18,7 @@ struct no{
 	struct no* prox;
 }
 
-ptrno *ordena(ptrno *l, int tam){
+ptrno *ordena(ptrno *l, int tam){ //Nao funfa
 	if((*l)==NULL)
 		return 0;
 		else{

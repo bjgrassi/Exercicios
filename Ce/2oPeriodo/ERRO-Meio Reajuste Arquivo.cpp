@@ -69,11 +69,11 @@ void reaj(float val) //LER de produto.xls e GRAVAR em reajustado.xls
     {   perror("Impossivel abrir"); system("pause"); exit(0); }
 	
 	if((arq1 = fopen("E:\\reajustado.xls","w"))==NULL)
-    {  //fprintf(arq,"%.2f\n",reg[i].pr);
+    {  //fprintf(arq,"%f\n",reg[i].pr);
        perror("Impossivel abrir"); system("pause"); exit(0); }
        
     fscanf(arq,"%d%s%f", &reg[i].cod,&reg[i].desc,&reg[i].pr);
-    while(!feof(arq))
+    while(!feof(arq1))
     {   
         reg[i].pr += reg[i].pr*val/100.0;
 		fprintf(arq1,"%d\t%s\t%.2f\n", reg[i].cod,reg[i].desc,reg[i].pr);

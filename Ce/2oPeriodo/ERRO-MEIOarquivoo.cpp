@@ -51,7 +51,7 @@ int main()
 void cadastrar(void)
 {
 	system("cls");
-	if((p=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\Arq-Oficial.txt","w"))==NULL)
+	if((p=fopen("E:\\Arq-Oficial.txt","w"))==NULL)
 	{
 		perror("Erro de abertura.");
 		system("pause");
@@ -75,24 +75,24 @@ void cadastrar(void)
 void reajustar(void)
 {
 	system("cls");
-	if((p=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\Arq-Oficial.txt","r"))==NULL)
+	if((p=fopen("E:\\Arq-Oficial.txt","r"))==NULL)
 	{
 		perror("Erro de leitura.\n");
 		system("pause");
 		exit(0);
 	}
-	if((p1=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\Arq-Reajuste.txt","w"))==NULL)
+	if((p1=fopen("E:\\Arq-Reajuste.txt","w"))==NULL)
 	{
 		perror("Erro de leitura.\n");
 		system("pause");
 		exit(0);
 	}
-		float perc;
-		printf("Porcentagem: ");
-		scanf("%f",&perc);
-		
-		if(perc==0)
-		  perc=1;
+	float perc;
+	printf("Porcentagem: ");
+	scanf("%f",&perc);
+	
+	if(perc==0)
+	  perc=1;
 		  
 	int i=0;
 	fscanf(p,"%d",&prod[i].cod);	      		
@@ -115,13 +115,13 @@ void reajustar(void)
 void exibir(void)
 {
 	system("cls");
-	if((p=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\Arq-Oficial.txt","r"))==NULL)
+	if((p=fopen("E:\\Arq-Oficial.txt","r"))==NULL)
 	{
 		perror("Erro de Leitura.\n");
 		system("pause"); 
 		exit(0);
 	}
-	if((p1=fopen("C:\\Users\\brukgrassi\\Documents\\Meus Documentos\\Sistemas Informacao\\Exercicios\\C\\2oPeriodo\\Arq-Reajuste.txt","r"))==NULL)
+	if((p1=fopen("E:\\Arq-Reajuste.txt","r"))==NULL)
 	{
 		perror("Erro de Leitura.\n");
 		system("pause");

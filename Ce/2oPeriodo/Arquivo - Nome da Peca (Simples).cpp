@@ -46,7 +46,7 @@ int main ()
     {   printf("Preco: R$");
         scanf("%f",&peca.preco);
         fwrite(&peca,sizeof(struct r),1,arq);
-        printf("Nome(FIM para encerrar): ");
+        printf("Nome (FIM para encerrar): ");
         fflush(stdin);
         gets(peca.nome);
         strupr(peca.nome);
@@ -86,7 +86,7 @@ int main ()
    void atualiza(void)
    {    int teste=0; 
         char nome[41];   
-        if ((arq=fopen("E:\\arq2.bin","ab+"))==NULL)
+        if ((arq=fopen("E:\\arq.bin","ab+"))==NULL)
         {
             perror("\n\nNao foi possivel abrir o arquivo.\n");
             system("pause");
@@ -98,7 +98,7 @@ int main ()
      strupr(nome);
      fread(&peca,sizeof(struct r),1,arq);
      while(!feof(arq))
-       { if (strcmp(peca.nome,nome)) // nao funfou ta funfando
+       { if (strcmp(peca.nome,nome)==0) //se forem iguais
          {  teste = 1;
             break;
          }
