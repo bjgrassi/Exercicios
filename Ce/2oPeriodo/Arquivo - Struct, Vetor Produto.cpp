@@ -4,7 +4,11 @@ O programa deve:
 a) Declarar vetor com 50 produtos com o lay-out da estrutura;
 b) Cadastrar os produtos
 c) Reajustar os preços, com percentual informado pelo usuário;
-d) Exibir a estrutura antes e depois do reajuste. */
+d) Exibir a estrutura antes e depois do reajuste. 
+
+OBS: Existe um detalhe nesse programa que não o torna perfeito. 
+Ao cadastrar e exibir o conteudo, é como se existisse um 'reajustado', 
+mas o proframa, alguma forma, copia o cadastro do 'original'*/
 
 #include<stdlib.h>
 #include<stdio.h>
@@ -94,18 +98,14 @@ void reajustar(void)
 	if(perc==0)
 	  perc=1;
 		  
-	int i=0;
-	fscanf(p,"%d",&prod[i].cod);	      		
-	while(!feof(p))
-	{
-		printf("Codigo: %d ",prod[i].cod);
+	fprintf(p1,"Preco Reajuste: \n");
+	for(int i=0;i<tam;i++)
+    { 
+		fscanf(p,"%d %s %.1f", prod[i].cod, prod[i].desc, prod[i].preco);
 		prod[i].preco += (prod[i].preco * (perc/100.0));
-		fprintf(p1,"Codigo: %d ",prod[i].cod);
-		fscanf(p,"%f",&prod[i].preco);
-		printf("Preco: %.1f ",prod[i].preco);
-		prod[i].preco += (prod[i].preco * (perc/100.0));
-		fprintf(p1,"Preco Reajuste: %.1f \n",prod[i].preco);
-		fscanf(p,"%d",&prod[i].cod);
+		
+		fprintf(p1,"Codigo: %d\nDescricao: %s\nPreco: %.1f\n\n", prod[i].cod, prod[i].desc, prod[i].preco);
+		printf("Codigo: %d\nDescricao: %s\nPreco: %.1f\n\n", prod[i].cod, prod[i].desc, prod[i].preco);
 	}
 	fclose(p);
 	fclose(p1);
@@ -130,18 +130,14 @@ void exibir(void)
 	
 	for(int i=0;i<tam;i++)
 	{
-		fscanf(p,"%d", &prod[i].cod);
-		fscanf(p,"%s", &prod[i].desc);
-		fscanf(p,"%f", &prod[i].preco);
+		fscanf(p,"%d%s%f", &prod[i].cod, &prod[i].desc, &prod[i].preco);
 	    printf("Codigo: %d\nDescricao: %s\nPreco: %.1f\n\n", prod[i].cod, prod[i].desc, prod[i].preco);
 	}
 	
-	/*printf("\nPreco com reajuste:\n");
+	printf("\nPreco com reajuste:\n");
 	for(int i=0;i<tam;i++)
 	{
-		fscanf(p,"%d", &prod[i].cod);
-		fscanf(p,"%s", &prod[i].desc);
-		fscanf(p,"%f", &prod[i].preco);
-	    printf("Codigo: %d\nDescricao: %s\nPreco: %.1f\n\n",prod[i].cod, prod[i].desc, prod[i].preco);
-	}fclose(p1); */fclose(p);
+		fscanf(p1,"%d%s%f", &prod[i].cod, &prod[i].desc, &prod[i].preco);
+	    printf("Codigo: %d\tDescricao: %s\tPreco: %.1f\n\n",prod[i].cod, prod[i].desc, prod[i].preco);
+	}fclose(p1); fclose(p);
 }
