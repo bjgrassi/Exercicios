@@ -18,7 +18,7 @@ struct no{
 	struct no* prox;
 }
 
-ptrno *ordena(ptrno *l, int tam){ //Nao funfa
+ptrno ordena(ptrno *l, int tam){
 	if((*l)==NULL)
 		return 0;
 		else{
@@ -43,7 +43,7 @@ int main(){
 	ptrno lista=NULL;
 	FILE *p, *r;
 	
-	if((p=fopen("E:\\arq.bin","rb"))==NULL)
+	if((p=fopen("arq.bin","rb"))==NULL)
 		printf("Erro.\n");
 		else{
 			int cont=0;
@@ -64,17 +64,18 @@ int main(){
 		}
 	}
 	
-	if((r=fopen("E:\\reaj.bin","wb"))==NULL){
+	if((r=fopen("reaj.bin","wb"))==NULL){
 		printf("Erro\n");
 		else{
-			float reaj
+			float reaj, novahora;
 			printf("Insira o reajuste: ");
 			scanf("%f", reaj);
 			
 			fread(&prof,sizeof(struct professor),1,p);
 			while(!eof(p)){
-				prof.hora=reaj*prof.hora/100;
-				fwrite(&prof,sizeof(struct professor,1,r)); //to com duvida se eu escrevo o reaj aqui direto
+				
+				novahora=reaj*prof.hora/100;
+				fwrite(&prof,sizeof(struct professor,1,r));
 				fread(&prof,sizeof(struct professor),1,p);
 			}
 		}
