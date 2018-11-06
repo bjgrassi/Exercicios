@@ -22,7 +22,7 @@ int comprimento(ptrno *l){
 			int cont=0;
 			while(aux!=NULL){
 				cont++;
-				aux->=prox;
+				aux=aux->prox;
 			}
 			return cont;
 		}
@@ -97,40 +97,28 @@ concatenação, o último elemento da primeira lista deve apontar para o primeiro e
 segunda lista.*/
 
 ptrno listona(ptrno l1, ptrno l2){
-	ptrno *l3;
-	if(l2==NULL && l1==NULL){
-		return 0;
-	}else 
-		if(l1==NULL && l2!=NULL)
-			return l3=l2;
-		else 
-			if(l2==NULL && l1!=NULL)
-				return l3=l1;
-			else
-				if(l1->prox!=NULL)
-					return listona(l1->prox, l2);
+	if((*l1)==NULL)
+		return *l2;
+		else{
+			if(l1->prox!=NULL)
+				return listona(l1->prox, l2);
 				else
 					l1->prox=l2;
-					return l3 = l1;
+					return l1;
+			}
 }
 
-ptrno listona(ptrno l1, ptrno l2){
-	ptrno *l3;
-	if(l1==NULL){
-		return listona(0,l2); //seria return 1?
+ptrno concatena(ptrno *l1, ptrno *l2){
+	ptrno aux=*l1;
+	if((*l1)==NULL)
+		return *l2;
 		else{
-			l3->info=l1->info;
-			l3->prox=NULL;
-			return listona(l3->prox);
+			while(aux->prox!=NULL)
+				aux=aux->prox;
+			if(aux->prox==NULL)
+				aux->prox=*l2;
 		}
-	}
-	if(l2==NULL && l1==NULL){
-		return 0;
-	}else{
-		l3->info=l2->info;
-		l3->prox=NULL;
-		return listona(l3->prox);
-	}
+		return *l1;
 }
 
 /*17. Considere listas que armazenam cadeias de caracteres e implemente uma função para
