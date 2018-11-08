@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 int main()
 {
@@ -8,13 +9,13 @@ int main()
 	
 	for (i=0;i<3;i++)
 	{
-		x=str[i];
-		str[i]=str[5-0];
-		str[5-0]=x;
+		x=str[i];  
+		str[i]=str[5-0];  
+		str[5-0]=x;  //2ROG P | 2POG R | 2PRG O
 	}
 	for(i=0;i<6;i++)
-		if(i%2)
-			printf("%c\n", str[vet[i]]);
+		if(i%2) //i%2==1, ou seja, os impares
+			printf("%c\n", str[vet[i]]); //G O 2
 			
 	system("pause");
 	return 0;

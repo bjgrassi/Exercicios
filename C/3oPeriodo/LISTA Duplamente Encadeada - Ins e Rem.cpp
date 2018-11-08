@@ -87,9 +87,8 @@ int main(){
 	removeinicio(&lista);
 	
 	printf("\n\nLista 2: ");
-	while(lista != NULL){
+	for(lista=lista; lista; lista=lista->pos){
 		printf("%d \t", lista->info);
-		lista=lista->pos;
 	}
 	printf("\n");
 	

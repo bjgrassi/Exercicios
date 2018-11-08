@@ -1,6 +1,4 @@
-#### *Utilizamos o programa DEV-C++*
-
-**--------- Bibliotecas ---------** 
+**--------- Bibliotecas do DEV-C ---------** 
 - stdio.h -> EX: Printf()/scanf()
 - stdlib.h -> Punções envolvendo alocação de memória, controle de processos, conversões e outras
 - string.h -> Para manipulação de cadeias de caracteres e regiões de memória
@@ -11,25 +9,28 @@
 ## Prog I - 1º Período
 - For(), if()/else, (do) while();
 - Vetores e Matrizes;
-- Bonus: Swich() case e default, Break;
+- Bônus: Swich()/case e default, Break;
 
 ## Prog II - 2º Período
 - Ponteiro;
 - Funções; 
 - Struct; 
-- arquivo;
+- Arquivo;
 
 ## Estruturas de Dados I - 3º Período
 - Passagem de Parâmetro: Valor e Referência;
 - Alocação Dinâmica (malloc e free)
 - Recursividade;
 - Listas Encadeadas, Duplamente Encadeadas, Circular;
-    - Insere Início e Fim, Remove Início e Fim,
-    - FIFO aka Fila, FILO aka Pilha
-- Método de ordenação de vetores e Lista;
-    - Bubble Sort, Selection Sort, Insert Sort
+    - INSERE Início e Fim, REMOVE Início e Fim,
+    - FIFO (Fila), FILO (Pilha),
+    - Ordenação
+- Método de Ordenação de Vetores;
+    - Bubble Sort, Selection Sort, Insert Sort,
+    - Bônus: QuickSort
 
 ## Estruturas de Dados II - 4º Período
 - Busca Binária (dividir p/ conquistar);
 - Árvores Binárias;
-- Tabelas de dispersão (hash tables):
+- Tabelas de dispersão (hash tables);
+- Grafos (Não deu tempo de aprender)

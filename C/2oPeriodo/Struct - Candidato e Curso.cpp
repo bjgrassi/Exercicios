@@ -17,7 +17,7 @@ int main(){
 	char sexo;
 	
 	for(int i=0;i<tam;i++){
-		printf("Codigo do curso %d: ", i+1);
+		printf("-> Codigo do curso %d: ", i+1);
 		scanf("%d", &cur[i].codigocurso);
 		printf("Num vagas curso %d: ", i+1);
 		scanf("%d", &cur[i].vagas);
@@ -25,39 +25,34 @@ int main(){
 		gets(cur[i].descricao);
 		printf("Concorrencia do curso %d no ano anterior: ", i+1);
 		scanf("%d", &cur[i].concorrencia);
-		
-		//printf("\n Valores: %d - %d - %s - %d", cur[i].codigocurso, cur[i].vagas, cur[i].descricao, cur[i].concorrencia);
-	}
-	
-	printf("\n");
+		}
 	
 	for(int i=0; i<tam; i++) {
-		printf("Num do candidato %d: ", i+1);
+		printf("\n-> Num do candidato %d: ", i+1);
 		scanf("%d", &cand[i].numcandidato);
 		printf("Codigo do curso do candidato %d: ", i+1);
 		scanf("%d", &cand[i].codigocan);
 		
-		//do{
+		do{
 		printf("Sexo do candidato %d: ", i+1); 
 		fflush(stdin);
 		scanf("%c", &cand[i].sexo); 
-		//} while ((cand[i].sexo!='f') || (cand[i].sexo!='m'));
+		} while ((cand[i].sexo!='f') && (cand[i].sexo!='m')); //pq é && e nao ||?
+	}
 		
-		//printf("\n Valores: %d - %d - %c", cand[i].numcandidato, cand[i].codigocan, cand[i].sexo);
-		
-		for(int i=0;i<tam;i++){
-			for(int j=0;j<tam;j++)
-				if(cur[i].codigocurso==cand[j].codigocan)
-					qtd[i]++;
-							
-			if(cand[i].sexo=='m'){
-				hom[i]++;
-				mas++;
-			}
-
-			if(cand[i].sexo=='f')
-				fem++;
+	for(int i=0;i<tam;i++){
+		for(int j=0;j<tam;j++) {
+			if(cur[i].codigocurso==cand[j].codigocan)
+				qtd[j]++;
 		}
+						
+		if(cand[i].sexo=='m'){
+			hom[i]++;
+			mas++;
+		}
+
+		if(cand[i].sexo=='f')
+			fem++;
 	}
 	for(int i=0;i<tam;i++){
 		if(cur[i].vagas>cur[i].concorrencia)
@@ -74,14 +69,14 @@ int main(){
 		printf("\n%d inscricoes para %d vagas no curso %d", qtd[i], cur[i].vagas, i+1);
 	printf("\n");
 	
-	printf("Ultrapassaram a concorrencia %d cursos\n", cursoconcorr);
+	printf("Ultrapassaram a concorrencia: %d cursos \n", cursoconcorr);
 	if(curso > 0)
 		printf("Curso com mais homens: %d\n", curso);
 		else
-			printf("Nenhum Curso tem homens\n");
+			printf("Nenhum Curso tem homens OK\n");
 	
 	float tot = fem+mas;
-	printf("Porcentagem de mulheres: %.2f \n\n", fem*100/tot);
+	printf("Porcentagem de mulheres: %.2f%% \n\n", fem*100/tot);
 	
 	system("pause");
 	return 0;
