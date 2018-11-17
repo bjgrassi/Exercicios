@@ -18,9 +18,8 @@ prof ordena(prof *l, int tam){
 	if((*l)==NULL)
 		return 0;
 		else{
-			prof aux, ant, inicio;
+			prof aux=*l, ant=aux, inicio=*l;
 			for(int i=0;i<tam-1;i++){
-				aux=*l, ant=aux, inicio=*l;
 				while(aux!=NULL){
 					if(ant->cod>aux->cod){
 						if(aux->prox==NULL){
@@ -33,13 +32,14 @@ prof ordena(prof *l, int tam){
 						
 							if(inicio==ant){
 								*l=aux;
-								inicio=aux=*l;
+								inicio=aux=ant=*l;
 							}
 						}
 					}
 					ant=aux;
 					aux=aux->prox;
 				}
+				aux=*l, ant=aux, inicio=*l;
 			}
 			return inicio;
 		}

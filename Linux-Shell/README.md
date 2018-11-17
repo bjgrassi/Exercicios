@@ -1,2 +1,1 @@
-# Laborstório de Sistemas Operacionais
-#### Matéria do 5o período do curso de SI realizada em 2017.1
+## Laborstório de Sistemas Operacionais - 5º Período
