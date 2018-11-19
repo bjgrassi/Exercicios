@@ -44,70 +44,68 @@ Arv* insereRecursivo(Arv* a, int n){
 }
 
 
-Arv* remove(Arv* a, int n){ //contanto q nao seja o nó e o num exista
-	if(a==NULL)
-		return 0;
+Arv* remove(Arv* r, int n){ //contanto q nao seja o nó 1
+	Arv* ant=r, *apaga=r;
+	if(apaga==NULL)
+		printf("Numero nao encontrado ou arvore vazia\n");
 		else{
-			Arv* ant, *apaga=a;
-			
 			if(apaga->info>n){
 				ant=apaga;
-				apaga->esq=remove(apaga->esq, n);
+				apaga=remove(apaga->esq, n);
 			}
 			else if(apaga->info<n){
 				ant=apaga;
-				apaga->dir=remove(apaga->dir, n);
+				apaga=remove(apaga->dir, n);
 			}
-			else if(apaga->info==n){
+			if (apaga->info==n){
 				if(ant->esq==apaga){
-					if(apaga->dir==NULL){
+					if((apaga->esq!=NULL)&&(apaga->dir==NULL)){
 						ant->esq=apaga->esq;
 						free(apaga);
 					}else 
-						if(apaga->esq==NULL){
+						if((apaga->esq==NULL)&&(apaga->dir!=NULL)){
 							ant->esq=apaga->dir;
 							free(apaga);
 						}else 
-							if((apaga->esq==NULL)&&(apaga->dir==NULL)){
+							if((apaga->esq==NULL)&&(apaga->dir==NULL)){ //so apaga se for a esquerda
 								ant->esq=NULL;
 								free(apaga);
 							}else {
-								Arv *ult=apaga;
-								while(ult->esq==NULL){
-									ult=ult->esq;
+								Arv *ult=apaga->esq;
+								while(ult->dir!=NULL){
+									ult=ult->dir;
 								}
 								
+								ult->dir=apaga->dir;
 								ant->esq=apaga->esq;
-								ult->esq=apaga->dir;
 								free(apaga);
 							}
-				}else{
-					if(apaga->dir==NULL){
-						ant->dir=apaga->esq;
+				}else if(ant->dir==apaga){
+					if((apaga->dir!=NULL)&&(apaga->esq==NULL)){
+						ant->dir=apaga->dir;
 						free(apaga);
 					}else 
-						if(apaga->esq==NULL){
-							ant->dir=apaga->dir;
+						if((apaga->dir==NULL)&&(apaga->esq!=NULL)){
+							ant->dir=apaga->esq;
 							free(apaga);
 						}else 
 							if((apaga->esq==NULL)&&(apaga->dir==NULL)){
 								ant->dir=NULL;
 								free(apaga);
 							}else {
-								Arv *ult=apaga;
-								while(ult->dir==NULL){
-									ult=ult->dir;
+								Arv *ult=apaga->dir;
+								while(ult->esq!=NULL){
+									ult=ult->esq;
 								}
 								
+								ult->esq=apaga->esq;
 								ant->dir=apaga->dir;
-								ult->dir=apaga->esq;
 								free(apaga);
 							}
 						
-					}
-			}else
-				printf("Numero nao encontrado\n");	
-				return a;
+				} 
+				return r;
+			}
 	}
 }
 
@@ -119,7 +117,7 @@ void imprime(Arv* lista){
 	}
 }
 int main(){
-	Arv* lista=cria(7); //comsegui sem criar nulo
+	Arv* lista=cria(7); //consegui sem criar nulo
 	insereRecursivo(lista, 8);
 	insereRecursivo(lista, 9);
 	insereRecursivo(lista, 4);
@@ -128,17 +126,18 @@ int main(){
 	printf("\nRecursivo - Lista em ordem:\n ");
 	imprime(lista);
 	
-	Arv* lista2=cria(6); //comsegui sem criar nulo
+	Arv* lista2=cria(6); //consegui sem criar nulo
 	insere(lista2, 8);
-	insere(lista2, 9);
+	insere(lista2, 7);
 	insere(lista2, 2);
-	insere(lista2, 5);
+	insere(lista2, 3); //testar pra esquerda e direita
+	insere(lista2, 9);
 		
 	printf("\n\nLista em ordem:\n ");
 	imprime(lista2);
 	
 	
-	remove(lista2, 32);
+	remove(lista2, 8);
 		
 	printf("\n\nLista Apagada:\n ");
 	imprime(lista2);
