@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="E:\introducao\BD\bd-02-Empregado-PreparedStatement"/>
+			<item value="E:\introducao\BD\bd-01-Conexao-Select"/>
+			<item value="E:\introducao\introducao-10-Ordenacao-com-Interface"/>
+			<item value="E:\introducao\introducao-09-Ordenacao-sem-Interface"/>
+			<item value="E:\introducao\introducao-08-Gerente-Vendedor-Abstract"/>
+			<item value="E:\introducao\introducao-07-Gerente-AumentaSalario"/>
+			<item value="E:\introducao\introducao-06-Gerente-com-Secretaria"/>
+			<item value="E:\introducao\introducao-04-ExcecaoEmpregado"/>
+			<item value="E:\introducao\introducao-03-ListaDeObjetos"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

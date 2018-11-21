@@ -1,0 +1,47 @@
+import oracle.jdbc.driver.*;		// Package da classe OracleDriver
+import java.sql.*;
+
+public class Principal
+{	public static void main (String[] args)
+	{	Connection conn = null;
+			
+			
+		try
+		{		
+			DriverManager.registerDriver(new OracleDriver());		
+			conn = DriverManager.getConnection
+					("jdbc:oracle:thin:@10.10.0.22:1521:xe", "usuario05", "usuario05");
+					
+					
+	    }
+		catch (SQLException e)
+		{	System.out.println ('\n' + "Erro na conexão com o banco.");
+			e.printStackTrace();
+			System.exit(1);
+		}
+				
+		try
+		{	
+			PreparedStatement pstmt = conn.prepareStatement
+					("Select * from empregados");
+			ResultSet rs = pstmt.executeQuery();
+	
+			while(rs.next())
+			{
+				System.out.println("Numero = " + rs.getInt("numero") +
+									"\nNome = " + rs.getString("nome") +
+									"\nSalario = " + rs.getDouble("salario"));
+			}
+			
+			rs.close();
+			pstmt.close();
+			conn.close();
+
+	    }
+		catch (SQLException e)
+		{	System.out.println ('\n' + "Erro ao recuperar dados no banco.");
+			e.printStackTrace();
+			System.exit(1);
+		}
+	}
+}
