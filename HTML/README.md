@@ -9,6 +9,6 @@
     - Pull Request
 
 Os sites:
-https://bjgrassi.github.io/Exercicios/HTML/GoogleApps-Presentation/index.html
-https://bjgrassi.github.io/Exercicios/HTML/cscw-mapas/charles.html
+- https://bjgrassi.github.io/Exercicios/HTML/GoogleApps-Presentation/index.html
+- https://bjgrassi.github.io/Exercicios/HTML/cscw-mapas/charles.html
 
