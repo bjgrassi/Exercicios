@@ -2,4 +2,13 @@
 - Criação de repositórios com páginas HTML
 - Comandos gits (branch, checkout)
 - Colaboração de projetos em grupo
-- Pull Request
+- Fork do amiguinho 
+    - Clonar o próprio respositório forkado 
+    - Editar
+    - Commit
+    - Pull Request
+
+Os sites:
+https://bjgrassi.github.io/Exercicios/HTML/GoogleApps-Presentation/index.html
+https://bjgrassi.github.io/Exercicios/HTML/cscw-mapas/charles.html
+
