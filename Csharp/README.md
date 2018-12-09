@@ -1,2 +1,6 @@
-## C#
-Faculdade: Exercícios e provas realizadas no período 2018.1
+## C# - 7º Período
+#### Visual Studio Ultimate 2012
+
+- Aplicação em Windows Form Application
+- Modelo MVC
+- Conexão com BD
