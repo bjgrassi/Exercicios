@@ -15,3 +15,6 @@ Faculdade: Exercícios e provas realizadas no período 2017.1
 
 ## Python
 Faculdade: Exercícios e provas realizadas no período 2018.1
+
+# Wiki
+Alguns tutoriais
